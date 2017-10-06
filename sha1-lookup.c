@@ -95,7 +95,7 @@ int sha1_pos(const unsigned char *sha1, void *table, size_t nr,
 			hi = mi;
 		else
 			lo = mi + 1;
-		mi = (hi + lo) / 2;
+		mi = lo + (hi - lo) / 2;
 	} while (lo < hi);
 	return -lo-1;
 }
